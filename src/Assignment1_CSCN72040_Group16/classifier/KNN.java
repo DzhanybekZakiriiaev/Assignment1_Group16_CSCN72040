@@ -1,11 +1,13 @@
-package Assignment1_CSCN72040_Group16;
+package Assignment1_CSCN72040_Group16.classifier;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-class KNN extends BaseClassifier {
+import Assignment1_CSCN72040_Group16.domain.Data;
+
+public class KNN extends BaseClassifier {
 	
     private final int k;
 

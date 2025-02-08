@@ -1,14 +1,20 @@
-
-package Assignment1_CSCN72040_Group16;
+package Assignment1_CSCN72040_Group16.service;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class MenuHandler {
+import Assignment1_CSCN72040_Group16.dao.DataDAO;
+import Assignment1_CSCN72040_Group16.domain.Data;
+import Assignment1_CSCN72040_Group16.classifier.NN;
+import Assignment1_CSCN72040_Group16.classifier.KNN;
+import Assignment1_CSCN72040_Group16.classifier.ClassifierInterface;
+import Assignment1_CSCN72040_Group16.classifier.AnotherClassifier;
+
+public class MenuService {
     private final Scanner scanner;
     private final ClassifierService classifierService;
 
-    public MenuHandler() {
+    public MenuService() {
         scanner = new Scanner(System.in);
         classifierService = new ClassifierService(new DataDAO());
     }

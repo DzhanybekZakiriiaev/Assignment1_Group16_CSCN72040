@@ -1,6 +1,10 @@
-package Assignment1_CSCN72040_Group16;
+package Assignment1_CSCN72040_Group16.service;
 
 import java.util.List;
+
+import Assignment1_CSCN72040_Group16.classifier.ClassifierInterface;
+import Assignment1_CSCN72040_Group16.dao.DataDAO;
+import Assignment1_CSCN72040_Group16.domain.Data;
 
 public class ClassifierService {
     private final DataDAO dataDAO;

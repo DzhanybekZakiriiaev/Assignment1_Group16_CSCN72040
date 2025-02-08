@@ -1,9 +1,12 @@
-package Assignment1_CSCN72040_Group16;
+package Assignment1_CSCN72040_Group16.dao;
 
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import Assignment1_CSCN72040_Group16.domain.Data;
+import Assignment1_CSCN72040_Group16.domain.Orientation;
 
 public class DataDAO {
 

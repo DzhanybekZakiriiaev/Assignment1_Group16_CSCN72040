@@ -1,4 +1,4 @@
-package Assignment1_CSCN72040_Group16;
+package Assignment1_CSCN72040_Group16.domain;
 
 public enum Orientation {
     FACE_UP(1, "Face Up"),
