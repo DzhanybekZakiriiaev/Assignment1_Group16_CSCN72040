@@ -19,15 +19,25 @@ public class DataDAO {
         }
     }
 
+    public void writeDataToFile(String filePath, List<Data> data) {
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(filePath))) {
+            for (Data entry : data) {
+                String orientationText = Orientation.getDescriptionByCode(entry.getPosition());
+                writer.write(entry.getX() + "," + entry.getY() + "," + entry.getZ() + "," + entry.getPosition() + "," + orientationText);
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.err.println("Error writing file: " + e.getMessage());
+        }
+    }
+
     private Data parseLine(String line) {
         String[] values = line.split(",");
-        
         try {
             double x = Double.parseDouble(values[0]);
             double y = Double.parseDouble(values[1]);
             double z = Double.parseDouble(values[2]);
-            int position = (values.length == 4) ? Integer.parseInt(values[3]) : -1; // Default position for 3-value lines
-
+            int position = (values.length == 4) ? Integer.parseInt(values[3]) : -1;
             return new Data(position, x, y, z);
         } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
             System.err.println("Skipping invalid line: " + line);
